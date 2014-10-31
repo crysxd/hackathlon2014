@@ -8,14 +8,7 @@
         android:icon="@drawable/ic_action_search"
         android:showAsAction="collapseActionView|ifRoom"
         android:title="@string/search_title"/>
-    
-    //Hintergrund Form für Karten
-    
-    <item>
-        <shape android:shape="rectangle">
-        	<solid android:color="#CABBBBBB"/>
-        	<corners android:radius ="2dp" />
-        	</shape>
-    </item>
+
+    <!-- Hintergrund Form für Karten -->
 
 </menu>
