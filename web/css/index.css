@@ -85,7 +85,6 @@ background: -webkit-gradient(linear, left top, left bottom, color-stop(40%,rgba(
 .circle-container .center {
   margin-top: -45px;
   margin-left: -110px;
-  height: px;
   width: 15em;
   text-align: center;
 }
@@ -96,6 +95,60 @@ background: -webkit-gradient(linear, left top, left bottom, color-stop(40%,rgba(
 
 .circle-container input {
   text-align: center;
+}
+
+.spinner {
+  margin: 0 auto;
+  width: 50px;
+  height: 20px;
+  text-align: center;
+  font-size: 15px;
+}
+
+.spinner > div {
+  background-color: #333;
+  height: 100%;
+  width: 4px;
+  margin-left: 1px;
+  display: inline-block;
+
+  -webkit-animation: stretchdelay 1.2s infinite ease-in-out;
+  animation: stretchdelay 1.2s infinite ease-in-out;
+}
+
+.spinner .rect2 {
+  -webkit-animation-delay: -1.1s;
+  animation-delay: -1.1s;
+}
+
+.spinner .rect3 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+.spinner .rect4 {
+  -webkit-animation-delay: -0.9s;
+  animation-delay: -0.9s;
+}
+
+.spinner .rect5 {
+  -webkit-animation-delay: -0.8s;
+  animation-delay: -0.8s;
+}
+
+@-webkit-keyframes stretchdelay {
+  0%, 40%, 100% { -webkit-transform: scaleY(0.4) }  
+  20% { -webkit-transform: scaleY(1.0) }
+}
+
+@keyframes stretchdelay {
+  0%, 40%, 100% { 
+    transform: scaleY(0.4);
+    -webkit-transform: scaleY(0.4);
+  } 20% {
+    transform: scaleY(1.0);
+    -webkit-transform: scaleY(1.0);
+  }
 }
 
 

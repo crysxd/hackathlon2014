@@ -5,10 +5,19 @@ $(function() {
     
 });
 
+$('#btn-search').click(function() {
+  loadName($('#search-field').val());
+
+});
+
 function loadName(name) {
-  loadUrl('http://192.168.1.87/data.php?name=' + name, function(json) {
+  $('#btn-search').button('loading');
+
+  loadUrl('http://192.168.1.93/data.php?name=' + name, function(json) {
     personData = json;
     alert(json.personCount);
+    
+    $('#btn-search').button('reset');
     
   });
 }
