@@ -1,13 +1,17 @@
 * {
- margin: 0;
+  margin: 0;
   padding: 0;
+}
+
+body {
+ background: #f4f4f4; 
 }
 
 .bubble {
   background red;
   box-shadow: 0 0 4px 0 #888;
-  height:200px;
-  width: 200px;
+  height:11em;
+  width: 11em;
   border-radius: 50%;
   margin: 100px auto;
   padding: 20px;
@@ -16,9 +20,14 @@
 
 .bubble h4 {
   text-align: center;
+  margin: 0;
 }
 
-.bubble img {
+.bubble>div>div {
+  height: 60%;
+}
+
+.bubble>img {
   position: absolute;
   border-radius: 50%;
   height: 100%;
@@ -29,7 +38,7 @@
   z-index: 1;
 }
 
-.bubble div {
+.bubble>div {
   border-radius: 50%;
   height: 100%;
   width: 100%;
@@ -38,15 +47,69 @@
   z-index: 90000;
   position: absolute;
   padding: 20px;
-background: -moz-linear-gradient(top,  rgba(255,255,255,0.2) 0%, rgba(153,227,239,0.2) 40%, rgba(51,198,224,0.4) 80%, rgba(0,184,216,0.4) 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.2)), color-stop(40%,rgba(153,227,239,0.2)), color-stop(80%,rgba(51,198,224,0.4)), color-stop(100%,rgba(0,184,216,0.4))); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top,  rgba(255,255,255,0.2) 0%,rgba(153,227,239,0.2) 40%,rgba(51,198,224,0.4) 80%,rgba(0,184,216,0.4) 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top,  rgba(255,255,255,0.2) 0%,rgba(153,227,239,0.2) 40%,rgba(51,198,224,0.4) 80%,rgba(0,184,216,0.4) 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top,  rgba(255,255,255,0.2) 0%,rgba(153,227,239,0.2) 40%,rgba(51,198,224,0.4) 80%,rgba(0,184,216,0.4) 100%); /* IE10+ */
-background: linear-gradient(to bottom,  rgba(255,255,255,0.2) 0%,rgba(153,227,239,0.2) 40%,rgba(51,198,224,0.4) 80%,rgba(0,184,216,0.4) 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#33ffffff', endColorstr='#6600b8d8',GradientType=0 ); /* IE6-9 */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(40%,rgba(255, 255, 255, 0.38)), color-stop(100%,rgba(2, 136, 196, 0.71))); /* Chrome,Safari4+ */
 }
 
 .bubble p {
   text-align: center
+}
+
+/**
+ * Position icons into circle (SO)
+ * http://stackoverflow.com/q/12813573/1397351 
+ */
+.circle-container {
+	position: relative;
+	width: 34em;
+	height: 34em;
+	padding: 16.8em; /*= 2em * 1.4 (2em = half the width of an img, 1.4 = sqrt(2))*/
+	border-radius: 50%;
+	margin: 8em auto 0;
+}
+.circle-container>div {
+	display: block;
+	overflow: hidden;
+	position: absolute;
+	top: 50%; left: 50%;
+	margin: -6em; /* 2em = 4em/2 */ /* half the width */
+}
+.deg0 { transform: translate(17em); } /* 12em = half the width of the wrapper */
+.deg45 { transform: rotate(45deg) translate(17em) rotate(-45deg); }
+.deg90 { transform: rotate(90deg) translate(17em) rotate(-90deg); }
+.deg135 { transform: rotate(135deg) translate(17em) rotate(-135deg); }
+.deg180 { transform: translate(-17em); }
+.deg225 { transform: rotate(225deg) translate(17em) rotate(-225deg); }
+.deg270 { transform: rotate(270deg) translate(17em) rotate(-270deg); }
+.deg315 { transform: rotate(315deg) translate(17em) rotate(-315deg); }
+
+.circle-container .center {
+  margin-top: -45px;
+  margin-left: -110px;
+  height: px;
+  width: 15em;
+  text-align: center;
+}
+
+.circle-container .btn {
+  margin-top: 5px;
+}
+
+.circle-container input {
+  text-align: center;
+}
+
+
+/* this is just for showing the angle on hover */
+.circle-container>div:not(.center):before {
+	position: absolute;
+	color: white;
+	opacity: 0;
+	background: rgba(0,0,0,.5);
+	font: 1.25em/3.45 Courier, monospace;
+	letter-spacing: 2px;
+	text-decoration: none;
+	text-indent: -2em;
+	text-shadow: 0 0 .1em deeppink;
+	transition: .7s; /* only works in Firefox */
+	content: attr(class)'°';
 }
