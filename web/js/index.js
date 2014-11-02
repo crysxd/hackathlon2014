@@ -19,12 +19,18 @@ function selectTab(elem, noAnimation) {
     
   }
   
-  $('#tab-slider').animate({left: left+'px', width: width+'px'}, 100);
+  $('#tab-slider').animate({left: left+'px', width: width+'px'}, 400);
   
 }
 
 $('#btn-search').click(function() {
   loadName($('#search-field').val());
+
+});
+
+$('#search-field').keydown(function(e) {
+  if(e.keyCode == 13)
+    loadName($('#search-field').val());
 
 });
 
@@ -143,19 +149,16 @@ function decode(str) {
 
 function fadeBubblesOut(callback) {
   var bubbleCount = $('.bubble').length;
-    $('.bubble').fadeOut(300, function() {
+    $('.bubble').fadeOut(400, function() {
      bubbleCount--;
      
      if(bubbleCount == 0 && typeof callback === 'function')
        callback();
      
    });
-  
-  /*$('.bubble').each(function(i, el) {
-    setTimeout(function() {
-        el.fadeOut(300);                           
-
-    },  100*i);
+  /*$('.bubble').each(function(i, e) {
+    e.fadeOut(300);                  
+                  
   });*/
 }
 
@@ -165,6 +168,7 @@ function fadeBubblesIn() {
 
 function loadName(name) {
   $('#btn-search').button('loading');
+  selectTab($('#tab-stats'));
   currentName = name;
 
   fadeBubblesOut(function() {
@@ -172,7 +176,7 @@ function loadName(name) {
       personData = json;
 
       $('#btn-search').button('reset');
-      $('#toolbar').fadeIn(300);
+      $('#toolbar').fadeIn(400);
       selectTab($('#tab-stats'), true);
 
       showStats();

@@ -27,7 +27,7 @@ body {
 
 #toolbar p {
   font-weight: bold;
-  color: #444;
+  color: #3c2434;
   display: inline-block;
   padding: 10px;
   margin: 0;
@@ -36,7 +36,7 @@ body {
 
 #tab-slider {
   height: 5px;
-  background: #444;
+  background: #3c2434;
   position: absolute;
   bottom: -1px;
   
@@ -44,7 +44,6 @@ body {
 
 .bubble {
   background rgba(255, 255, 255, 0.6);
-  box-shadow: 0 0 2px 0 #888;
   height:11em;
   width: 11em;
   border-radius: 50%;
@@ -52,19 +51,15 @@ body {
   padding: 20px;
   position: relative;
   display: none;
-  
+  box-shadow: 0 0 8px 1px #aaa;
+  color: #fff;
 }
 
 .bubble h4 {
   text-align: center;
   margin: 0;
-  color: #ddd;
-
-}
-
-.bubble>div>div {
-  height: 60%;
-  opacity: 0;
+  vertical-align: bottom;
+  height: 42%;
 }
 
 .bubble>img {
@@ -74,26 +69,39 @@ body {
   width: 100%;
   top: 0;
   left: 0;
-  border: solid 1px grey;
   z-index: 1;
+}
+
+.bubble hr {
+  margin: 5px;
+  margin-left: -10px;
+  margin-right: -10px;
+  border-width:0;
+  background-color: #bbb;
+  height: 1px;
 }
 
 .bubble>div {
   border-radius: 50%;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
   z-index: 90000;
   position: absolute;
   padding: 20px;
-background: -webkit-gradient(linear, left top, left bottom, color-stop(35%,rgba(255, 255, 255, 0.0)), color-stop(100%,rgb(65, 65, 65))); /* Chrome,Safari4+ */
+  padding-top: 30px;
+  opacity: 0;
+  background: rgba(65, 65, 65, 0.7);
+   transition: all 0.4s;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
+
+.bubble>div:hover {
+  opacity: 1;
+
 }
 
 .bubble p {
   text-align: center;
-  color: #ddd;
-
+  vertical-align: top;
+    height: 49%;
 }
 
 /**
