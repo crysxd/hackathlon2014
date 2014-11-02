@@ -4,27 +4,67 @@
 }
 
 body {
- background: #f4f4f4; 
+  background: #f4f4f4; 
+  padding-top: 40px;
+  background: url(../background.jpg) no-repeat center center fixed;
+}
+
+#toolbar {
+  background: rgba(255, 255, 255, 0.6); 
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99999999;
+  border-bottom: solid 1px #eee;
+  display: none;
+}
+
+#toolbar div {
+  width: 188px; 
+  margin: 0px auto;
+}
+
+#toolbar p {
+  font-weight: bold;
+  color: #444;
+  display: inline-block;
+  padding: 10px;
+  margin: 0;
+  cursor: pointer;
+}
+
+#tab-slider {
+  height: 5px;
+  background: #444;
+  position: absolute;
+  bottom: -1px;
+  
 }
 
 .bubble {
-  background red;
-  box-shadow: 0 0 4px 0 #888;
+  background rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 2px 0 #888;
   height:11em;
   width: 11em;
   border-radius: 50%;
   margin: 100px auto;
   padding: 20px;
   position: relative;
+  display: none;
+  
 }
 
 .bubble h4 {
   text-align: center;
   margin: 0;
+  color: #ddd;
+
 }
 
 .bubble>div>div {
   height: 60%;
+  opacity: 0;
 }
 
 .bubble>img {
@@ -47,11 +87,13 @@ body {
   z-index: 90000;
   position: absolute;
   padding: 20px;
-background: -webkit-gradient(linear, left top, left bottom, color-stop(40%,rgba(255, 255, 255, 0.38)), color-stop(100%,rgba(2, 136, 196, 0.71))); /* Chrome,Safari4+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(35%,rgba(255, 255, 255, 0.0)), color-stop(100%,rgb(65, 65, 65))); /* Chrome,Safari4+ */
 }
 
 .bubble p {
-  text-align: center
+  text-align: center;
+  color: #ddd;
+
 }
 
 /**
