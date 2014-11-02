@@ -143,7 +143,7 @@ function showPersons() {
 
 function decode(str) {
   console.log(str);
-  return decodeURIComponent((str+'').replace(/\+/g, '%20'));
+  return decodeURIComponent((str+'')).replace(/\+/g, '<br>');
   
 }
 
@@ -175,12 +175,13 @@ function loadName(name) {
     loadUrl('http://192.168.1.60/data.php?name=' + name, function(json) {
       personData = json;
 
-      $('#btn-search').button('reset');
-      $('#toolbar').fadeIn(400);
-      selectTab($('#tab-stats'), true);
+      $('#heading').fadeOut(400, function() {
+        $('#btn-search').button('reset');
+        $('#toolbar').fadeIn(400);
+        selectTab($('#tab-stats'), true);
 
-      showStats();
-
+        showStats();
+      });
     });
   }); 
 }

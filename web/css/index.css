@@ -42,6 +42,13 @@ body {
   
 }
 
+#heading {
+  position: fixed;
+  left: 50%;
+  margin-left: -254px;
+  top: 250px;
+}
+
 .bubble {
   background rgba(255, 255, 255, 0.6);
   height:11em;
