@@ -172,7 +172,7 @@ function loadName(name) {
   currentName = name;
 
   fadeBubblesOut(function() {
-    loadUrl('http://192.168.1.60/data.php?name=' + name, function(json) {
+    loadUrl('data.php?name=' + name, function(json) {
       personData = json;
 
       $('#heading').fadeOut(400, function() {
