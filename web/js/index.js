@@ -45,17 +45,25 @@ function showStats() {
 
     $('.deg315 p').html(personData.min_life_span + ' Jahre');
     $('.deg315 h4').html('Kürzeste Lebenszeit');
+    $('.deg315 img').attr('src', 'i315.png');
     $('.deg0 p').html(personData.max_life_span + ' Jahre');
     $('.deg0 h4').html('Längste Lebenszeit');
+    $('.deg0 img').attr('src', 'i0.png');
     $('.deg45 p').html(Math.round(personData.life_span) + ' Jahre');
     $('.deg45 h4').html('Durchschnitts Lebenszeit');
+    $('.deg45 img').attr('src', 'i45.png');
     $('.deg90 p').html('Jahr ' + personData.oldest_entry);
     $('.deg90 h4').html('Erste Erscheinung');
+    $('.deg90 img').attr('src', 'i90.png');
     $('.deg270 p').html(personData.personCount);
     $('.deg270 h4').html('Anzahl Personen');
+    $('.deg270 img').attr('src', 'i270.png');
     $('.deg135 h4').html('Häufigster Beruf');
+    $('.deg135 img').attr('src', 'i135.png');
     $('.deg180 h4').html('Häufigster Geburtsort');
+    $('.deg180 img').attr('src', 'i180.png');
     $('.deg225 h4').html('Häufigster Lebensort');
+    $('.deg225 img').attr('src', 'i225.png');
 
     if(personData.occupations.length) {
       $('.deg135 p').html(personData.occupations[0].occupation);
