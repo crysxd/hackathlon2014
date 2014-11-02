@@ -48,7 +48,7 @@ function showStats() {
     $('.deg0 p').html(personData.max_life_span + ' Jahre');
     $('.deg0 h4').html('Längste Lebenszeit');
     $('.deg45 p').html(Math.round(personData.life_span) + ' Jahre');
-    $('.deg45 h4').html('Durchschnittliche Lebenszeit');
+    $('.deg45 h4').html('Durchschnitts Lebenszeit');
     $('.deg90 p').html('Jahr ' + personData.oldest_entry);
     $('.deg90 h4').html('Erste Erscheinung');
     $('.deg270 p').html(personData.personCount);
@@ -87,30 +87,50 @@ function showStats() {
 }
 
 function showPersons() {
+  if(personData.vip_info.length <= 0) {
+    alert("Leider wurden keine VIPs gefunden");
+    return;
+    
+  }
+  
   selectTab($('#tab-persons'));
 
   fadeBubblesOut(function() {
+    console.log(personData.vip_info);
+    $('.deg315 p').html(personData.vip_info[0].birth);
+    $('.deg315 h4').html(decode(personData.vip_info[0].name));
+    $('.deg315 img').attr('src', 'p315.jpg');
+    $('.deg0 p').html(personData.vip_info[1].birth);
+    $('.deg0 h4').html(decode(personData.vip_info[1].name));
+    $('.deg0 img').attr('src', 'p0.jpg');
+    $('.deg45 p').html(personData.vip_info[2].birth);
+    $('.deg45 h4').html(decode(personData.vip_info[2].name));
+    $('.deg45 img').attr('src', 'p45.jpg');
+    $('.deg90 p').html(personData.vip_info[3].birth);
+    $('.deg90 h4').html(decode(personData.vip_info[3].name));
+    $('.deg90 img').attr('src', 'p90.jpg');
+    $('.deg270 p').html(personData.vip_info[4].birth);
+    $('.deg270 h4').html(decode(personData.vip_info[4].name));
+    $('.deg270 img').attr('src', 'p270.jpg');
+    $('.deg135 p').html(personData.vip_info[5].birth);
+    $('.deg135 h4').html(decode(personData.vip_info[5].name));
+    $('.deg135 img').attr('src', 'p135.jpg');
+    $('.deg180 p').html(personData.vip_info[6].birth);
+    $('.deg180 h4').html(decode(personData.vip_info[6].name));
+    $('.deg180 img').attr('src', 'p180.jpg');
+    $('.deg225 p').html(personData.vip_info[7].birth);
+    $('.deg225 h4').html(decode(personData.vip_info[7].name));
+    $('.deg225 img').attr('src', 'p225.jpg');
 
-    $('.deg315 p').html('Name hier her');
-    $('.deg315 h4').html('VIP 1');
-    $('.deg0 p').html('Name hier her');
-    $('.deg0 h4').html('VIP 2');
-    $('.deg45 p').html('Name hier her');
-    $('.deg45 h4').html('VIP 3');
-    $('.deg90 p').html('Name hier her');
-    $('.deg90 h4').html('VIP 4');
-    $('.deg270 p').html('Name hier her');
-    $('.deg270 h4').html('VIP 5');
-    $('.deg135 p').html('Name hier her');
-    $('.deg135 h4').html('VIP 6');
-    $('.deg180 p').html('Name hier her');
-    $('.deg180 h4').html('VIP 7');
-    $('.deg225 p').html('Name hier her');
-    $('.deg225 h4').html('VIP 8');
-    
     fadeBubblesIn();
     
   });
+}
+
+function decode(str) {
+  console.log(str);
+  return decodeURIComponent((str+'').replace(/\+/g, '%20'));
+  
 }
 
 function fadeBubblesOut(callback) {
